@@ -4,11 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --ext .ts src",
     "dev": "ts-node-dev src/index.ts",
     "start": "ts-node src/index.ts",
-    "lint:fix": "eslint --fix src/**/*.ts",
-    "prettier": "prettier --write ."
+    "lint": "eslint --fix src/**/*.ts",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@commitlint/cli": "^18.5.0",
