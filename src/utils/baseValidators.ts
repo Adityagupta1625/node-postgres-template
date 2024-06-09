@@ -22,7 +22,7 @@ export class BaseValidator {
       if (valid) next()
       else throw new HttpException(400, validate.errors)
     } catch (e: any) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      
       return res.status(e?.errorCode ?? 500).json({ message: e })
     }
   }

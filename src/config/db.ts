@@ -2,12 +2,12 @@ import { DataSource } from 'typeorm'
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
-  host: 'localhost',
-  port: 5432,
-  username: 'test',
-  password: 'test',
-  database: 'test',
-  synchronize: true,
-  logging: true,
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT as string),
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  synchronize: process.env.ENV==='production'?false:true,
+  logging: process.env.ENV==='production'?false:true,
   entities: []
 })
